@@ -30,3 +30,9 @@ mysql> INSERT INTO bankuser (name,password,address) VALUES ('bankuser','pwd','ny
 Query OK, 1 row affected (0.14 sec)
 
 mysql>
+
+
+======================================================================================
+
+How to import github URI https://github.com/emailbelongstogp/Struts2DBExamplesFinalMost im eclipse
+File--->Import--->Git---> Projects From GIT--->Clone URI--->Paste URI-->Nrct--->Next--->Finish/Done
