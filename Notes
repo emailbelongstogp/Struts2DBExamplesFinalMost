@@ -17,6 +17,32 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
+mysql> CREATE DATABASE samplestruts;
+Query OK, 1 row affected (0.002 sec)
+
+=================================
+
+In Mac commmand space then type terminal when opens type below command to install mysql
+  brew install mysql
+  
+  
+  Step : Start the MySQL Service
+Once the installation finishes, you need to kickstart the server engine in the background:
+
+
+Bash
+brew services start mysql
+
+Step : Log In
+Wait about 5 seconds for the database to initialize, then run the login command:
+
+Bash
+mysql -u root
+
+(Note: If you have not set a password yet, omit the -p. If you already set a password previously, use mysql -u root -p instead).
+
+===============================
+
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -31,8 +57,60 @@ Query OK, 1 row affected (0.14 sec)
 
 mysql>
 
+===================================================================================
+Enter Exit to exit from mysql on mac terminal
+
+To install DB UI tool like DBeaver give brew command like below
+
+brew install --cask dbeaver-community
+
+
+Step : Launch DBeaver in Mac
+Press Command + Space to open Spotlight Search.
+
+Type DBeaver and press Enter.
+
+(Alternatively, open your Finder, click on Applications in the sidebar, and double-click DBeaver).
+
+Step : Connect DBeaver to Your Local MySQL
+When DBeaver opens for the first time, it might automatically prompt you to select a database. If it doesn't, click the Plug Icon with a Plus Sign (New Database Connection) in the top-left corner.
+
+Select MySQL from the list of database types and click Next.
+
+Set up the connection fields using your current settings:
+
+Host: localhost
+
+Port: 3306
+
+Database: samplestruts
+
+Username: root
+
+Password: (Leave this completely blank)
 
 ======================================================================================
 
 How to import github URI https://github.com/emailbelongstogp/Struts2DBExamplesFinalMost im eclipse
 File--->Import--->Git---> Projects From GIT--->Clone URI--->Paste URI-->Nrct--->Next--->Finish/Done
+
+========================================================================================
+
+
+
+Action(value = "login", results = { @Result(name = "success", location = "/hello.jsp"),
+		@Result(name = "error", location = "/fault.jsp") })
+@Namespace("/")
+public class LoginAction extends ActionSupport {
+	public String execute() throws Exception {
+		String returnString = ERROR;
+		Connection conn = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			System.out.println("Connecting to the mysql database");
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/samplestruts", "root", "");
+			
+			
+			Make usre in LoginAction class give corresponding mysql password to avoid access issues of root user trying to validate given name and password on the database schema table. If it is default password leave it blank as above if it is admin give like "admin"
