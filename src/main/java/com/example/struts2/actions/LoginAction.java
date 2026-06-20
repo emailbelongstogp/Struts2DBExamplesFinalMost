@@ -22,7 +22,7 @@ public class LoginAction extends ActionSupport {
 		try {
 			System.out.println("Connecting to the mysql database");
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/samplestruts", "root", "admin");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/samplestruts", "root", "");
 			System.out.println("Connection is Established");
 			preparedStatement = conn.prepareStatement("SELECT * from bankuser where name=? and password=?");
 			System.out.println("preparedStatement is " + preparedStatement);

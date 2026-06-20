@@ -114,3 +114,40 @@ public class LoginAction extends ActionSupport {
 			
 			
 			Make usre in LoginAction class give corresponding mysql password to avoid access issues of root user trying to validate given name and password on the database schema table. If it is default password leave it blank as above if it is admin give like "admin"
+			
+			============================
+			
+			
+			To commit updated changes from Mac Terminal follow similar steps
+			
+			gp@Mac git % cd Struts2DBExamplesFinalMost 
+gp@Mac Struts2DBExamplesFinalMost % pwd
+/Users/gp/git/Struts2DBExamplesFinalMost
+gp@Mac Struts2DBExamplesFinalMost % 
+gp@Mac Struts2DBExamplesFinalMost % 
+gp@Mac Struts2DBExamplesFinalMost % 
+gp@Mac Struts2DBExamplesFinalMost % 
+gp@Mac Struts2DBExamplesFinalMost % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .classpath
+	modified:   .settings/org.eclipse.jdt.core.prefs
+	modified:   .settings/org.eclipse.wst.common.project.facet.core.xml
+	modified:   Notes
+	modified:   pom.xml
+	modified:   src/main/java/com/example/struts2/actions/LoginAction.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gp@Mac Struts2DBExamplesFinalMost % git add Notes
+gp@Mac Struts2DBExamplesFinalMost % git commit -m "Update project notes with database configuration details"
+[main 49fd329] Update project notes with database configuration details
+ 1 file changed, 79 insertions(+), 1 deletion(-)
+gp@Mac Struts2DBExamplesFinalMost % git push
+Username for 'https://github.com': 
+			
+			after username enter token (generated from github profile picture--->settings---> developer Settings-->Personal access tokens--->Tokens(classic) one--->generate new token(classic) copy and store it and use it for future uses
+			
